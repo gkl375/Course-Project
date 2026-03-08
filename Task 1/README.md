@@ -359,23 +359,6 @@ def load_sample_data(app):
 - ✅ Low stock alert
 - ✅ Customer tier calculation
 
-## ⚠️ Error Handling
-
-- **No API response**: Falls back to manual entry
-- **Invalid ISBN**: Validation prevents invalid codes
-- **Out of stock**: Cart check prevents overselling
-- **No webcam**: Uses keyboard/manual input
-- **Missing data file**: Creates new file on startup
-- **Network timeout**: 5-second timeout with fallback
-
-## 📊 Performance
-
-- **Inventory**: O(1) lookup by ISBN
-- **Search**: O(n) linear search (acceptable for <1000 books)
-- **API Calls**: Rate-limited with 0.5s delay
-- **UI Refresh**: Efficient tree updates
-- **JSON I/O**: Lazy load/save pattern
-
 
 
 
