@@ -1,0 +1,182 @@
+# Heap and heapsort — flow overview
+
+**Max-heap** in an array: `parent(i) = (i-1)//2`, `left(i) = 2i+1`, `right(i) = 2i+2`.  
+Implementation: package `heap_heapsort/`; run via `heap_heapsort_project.py` or `python -m heap_heapsort`.
+
+---
+
+## 1. MaxHeap (`max_heap.py`): insert, extract_max, peek
+
+High-level view of the priority-queue API, then detailed control flow for each operation.
+
+### 1.1 Overview
+
+```mermaid
+flowchart TD
+  A[MaxHeap] --> B[insert]
+  B --> B1[Append new value at end of array]
+  B1 --> B2[swim_up toward root until parent is not smaller]
+
+  A --> C[peek]
+  C --> C1[Return value at index 0]
+
+  A --> D[extract_max]
+  D --> D1[Remove root max value]
+  D1 --> D2[Put last element at root]
+  D2 --> D3[sink_down toward leaves until children are not larger]
+```
+
+
+
+### 1.2 `insert` → `_swim_up`
+
+```mermaid
+%%{init: {'theme': 'default', 'flowchart': {'htmlLabels': true, 'nodeSpacing': 34, 'rankSpacing': 56}, 'themeVariables': {'fontSize': '17px'}}}%%
+flowchart TD
+    %% max_heap.py — insert → _swim_up
+    A([Insert value]) --> B["Append at end<br/>MaxHeap.insert()"]
+    B --> D["Swim up<br/>_swim_up()"]
+    D --> E{{"idx>0 and parent<node?"}}
+    E -->|yes| F["Swap with parent<br/>swap()"]
+    F --> G["Continue from parent index"]
+    G --> D
+    E -->|no| H([done — max-heap valid])
+```
+
+
+
+### 1.3 `extract_max` → `_sink_down`
+
+```mermaid
+%%{init: {'theme': 'default', 'flowchart': {'htmlLabels': true, 'nodeSpacing': 34, 'rankSpacing': 56}, 'themeVariables': {'fontSize': '17px'}}}%%
+flowchart TD
+    %% max_heap.py — extract_max → _sink_down
+    A([Extract max]) --> B{{"Heap empty?"}}
+    B -->|yes| X([raise error])
+    B -->|no| C{{"size==1?"}}
+    C -->|yes| Y["Pop and return it"]
+    Y --> RET([return])
+    C -->|no| D["Save root as answer"]
+    D --> E["Move last to root"]
+    E --> F["Sink down<br/>_sink_down()"]
+    F --> G{{"left child exists?"}}
+    G -->|no| Z2([return saved max])
+    G -->|yes| H["Pick larger of left / right child"]
+    H --> I{{"node >= maxChild?"}}
+    I -->|yes| Z2
+    I -->|no| J["Swap with larger child"]
+    J --> K["Move index down to that child"]
+    K --> F
+    Z2 --> RET
+```
+
+
+
+### 1.4 `peek`
+
+```mermaid
+%%{init: {'theme': 'default', 'flowchart': {'htmlLabels': true, 'nodeSpacing': 34, 'rankSpacing': 56}, 'themeVariables': {'fontSize': '17px'}}}%%
+flowchart TD
+    %% max_heap.py — peek
+    A([Peek]) --> B{{"Heap empty?"}}
+    B -->|yes| E([raise error])
+    B -->|no| C["Return root value<br/>peek()"]
+    C --> D([done])
+```
+
+
+
+---
+
+## 2. Heapsort (`heapsort.py`): `heap_sort`, `build_max_heap`, and `heapify`
+
+In-place sort: build a max-heap, then repeatedly move the root maximum to the sorted tail and **heapify** the prefix. `**heapify`** is the shared sift-down step used inside `**build_max_heap**` and after each swap in `**heap_sort**`.
+
+### 2.1 `heap_sort`
+
+```mermaid
+%%{init: {'theme': 'default', 'flowchart': {'htmlLabels': true, 'nodeSpacing': 34, 'rankSpacing': 56}, 'themeVariables': {'fontSize': '17px'}}}%%
+flowchart TD
+    %% heapsort.py — heap_sort
+    A([heap_sort]) --> N["n = len(arr)"]
+    N --> B["build_max_heap(arr)"]
+    B --> C["For end from n-1 down to 1"]
+    C --> D["Swap arr[0] and arr[end]"]
+    D --> E["heapify(arr, end, 0)"]
+    E --> F{{"end > 1 ?"}}
+    F -->|yes| C
+    F -->|no| G([array sorted ascending])
+```
+
+
+
+### 2.2 `build_max_heap`
+
+```mermaid
+%%{init: {'theme': 'default', 'flowchart': {'htmlLabels': true, 'nodeSpacing': 34, 'rankSpacing': 56}, 'themeVariables': {'fontSize': '17px'}}}%%
+flowchart TD
+    %% heapsort.py — build_max_heap
+    A([build_max_heap]) --> B["n = len(arr)"]
+    B --> C["For i from last parent to 0"]
+    C --> D["heapify(arr, n, i)"]
+    D --> E{{"More parents to fix?"}}
+    E -->|yes| C
+    E -->|no| F([whole array is a max-heap])
+```
+
+
+
+### 2.3 `heapify` (sift-down)
+
+```mermaid
+%%{init: {'theme': 'default', 'flowchart': {'htmlLabels': true, 'nodeSpacing': 34, 'rankSpacing': 56}, 'themeVariables': {'fontSize': '17px'}}}%%
+flowchart TD
+    %% heapsort.py — heapify: sift-down on array slice [0..n)
+    A["Start heapify(arr, n, i)"] --> B["largest = i; compute left/right"]
+    B --> C{{"left > largest?"}}
+    C -->|yes| D["largest = left"]
+    C -->|no| E[unchanged]
+    D --> F
+    E --> F{{"right > largest?"}}
+    F -->|yes| G["largest = right"]
+    F -->|no| H[unchanged]
+    G --> I
+    H --> I{{"largest==i?"}}
+    I -->|yes| J([subtree satisfies max-heap])
+    I -->|no| K["Swap arr[i], arr[largest]"]
+    K --> L["Recurse on largest"]
+    L --> A
+```
+
+
+
+### 2.4 Shared idea: `heapify` and `sink_down`
+
+```mermaid
+flowchart LR
+  F[heapify = sift down at one node]
+  F --> A[Used in build_max_heap and heapsort loop]
+  F --> B[Same idea as sink_down after extract_max]
+```
+
+
+
+---
+
+## 3. Files in this project
+
+
+| Topic              | Path                                                     |
+| ------------------ | -------------------------------------------------------- |
+| Core code          | `heap_heapsort/max_heap.py`, `heap_heapsort/heapsort.py` |
+| Console demo       | `heap_heapsort/demo.py` (`correctness_demo`)             |
+| Mermaid flowcharts | This file (`heap_heapsort_flowchart.md`)                 |
+| Step PNGs          | `diagrams/`                                              |
+| Heapsort steps CSV | `tables/heapsort_step_transitions.csv`                   |
+| MaxHeap steps CSV  | `tables/maxheap_step_transitions.csv`                    |
+| Index mapping CSV  | `tables/heap_index_mapping.csv`                          |
+| Timing and plots   | `results/`                                               |
+| User guide         | `README.md`                                              |
+
+
+Run: `python heap_heapsort_project.py` (same as `python -m heap_heapsort`).
