@@ -1,0 +1,4 @@
+# Python 3.9+ is required (install separately).
+# Core algorithms use the standard library only; matplotlib is for optional outputs.
+
+matplotlib>=3.7.0
