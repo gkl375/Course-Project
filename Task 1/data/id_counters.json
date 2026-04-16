@@ -1,0 +1,7 @@
+{
+  "customer": 4,
+  "supplier": 2,
+  "purchase_order": 1,
+  "receipt": 3,
+  "staff": 5
+}

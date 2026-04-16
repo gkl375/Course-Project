@@ -1,0 +1,34 @@
+[
+  {
+    "name": "City Book Distributor",
+    "supplier_id": "SUP0001",
+    "contact_person": "Mandy Man",
+    "address": "12/F, Commerce Tower, 8 Canton Road, Tsim Sha Tsui, Kowloon, Hong Kong",
+    "phone": "2388 1100",
+    "email": "orders@citybookdist.com",
+    "supplied_catalog": {
+      "9789000000012": 52.8,
+      "9789000000029": 76.8,
+      "9789000000036": 94.8,
+      "9789000000043": 57.0,
+      "9789000000050": 40.8
+    }
+  },
+  {
+    "name": "Allied Stationery Supply",
+    "supplier_id": "SUP0002",
+    "contact_person": "Sally Hui",
+    "address": "Unit B, 8/F, Kwun Tong Industrial Bldg, 436 Kwun Tong Road, Kwun Tong, Kowloon, Hong Kong",
+    "phone": "2799 2200",
+    "email": "sales@alliedstationery.com",
+    "supplied_catalog": {
+      "5901234567893": 6.0,
+      "4890123456787": 11.1,
+      "4890123456800": 13.2,
+      "4890123456817": 21.0,
+      "4890123456824": 27.0,
+      "4890123456831": 19.2,
+      "4890123456794": 7.2
+    }
+  }
+]

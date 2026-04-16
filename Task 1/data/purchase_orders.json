@@ -1,0 +1,16 @@
+[
+  {
+    "po_id": "PO0001",
+    "supplier_id": "SUP0002",
+    "created": "2026-04-04T14:49:21",
+    "status": "Draft",
+    "notes": "Manually add: 48990123456787",
+    "lines": [
+      {
+        "product_key": "4890123456787",
+        "quantity": 10,
+        "unit_price": 11.1
+      }
+    ]
+  }
+]

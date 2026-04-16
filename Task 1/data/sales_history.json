@@ -1,0 +1,113 @@
+[
+  {
+    "receipt_id": "RCP000001",
+    "created": "2026-04-02T14:30:00",
+    "customer": {
+      "customer_id": "CUS0001",
+      "name": "Alex Tan",
+      "email": "alex.tan@customer.com",
+      "telephone": "9123 4567"
+    },
+    "items": [
+      {
+        "key": "9789000000012",
+        "name": "Easy Asian Cooking",
+        "qty": 1,
+        "unit_price": 88.0,
+        "subtotal": 88.0
+      },
+      {
+        "key": "5901234567893",
+        "name": "Black Ballpoint Pen",
+        "qty": 2,
+        "unit_price": 10.0,
+        "subtotal": 20.0
+      }
+    ],
+    "subtotal": 108.0,
+    "discount_amount": 0.0,
+    "final_total": 108.0,
+    "receipt_text": "================================================================\n                    JOY BOOKSTORE - RECEIPT                     \n================================================================\nReceipt ID: RCP000001\nDate: 2026-04-02 14:30:00\n================================================================\nCustomer: Alex Tan\nCustomer ID: CUS0001\nLoyalty Tier: Standard\nLoyalty Points: 499\nITEM                                     |  QTY   |     SUBTOTAL\n----------------------------------------------------------------\nEasy Asian Cooking (9789000000012)       |   1    |    HKD 88.00\nBlack Ballpoint Pen (5901234567893)      |   2    |    HKD 20.00\n================================================================\nSubtotal:                                             HKD 108.00\nPoints Earned:                                                10\n================================================================\nTOTAL:                                                HKD 108.00\n================================================================\n            Thank you for shopping at Joy BookStore!            \n================================================================",
+    "customer_snapshot": {
+      "customer_id": "CUS0001",
+      "name": "Alex Tan",
+      "loyalty_points": 499,
+      "loyalty_tier": "Standard"
+    },
+    "receipt_store_name": "Joy BookStore"
+  },
+  {
+    "receipt_id": "RCP000002",
+    "created": "2026-04-03T11:15:30",
+    "customer": {
+      "customer_id": "CUS0002",
+      "name": "Sarah Lee",
+      "email": "sarah.lee@customer.com",
+      "telephone": "6123 8888"
+    },
+    "items": [
+      {
+        "key": "9789000000043",
+        "name": "After the Late Bell",
+        "qty": 1,
+        "unit_price": 95.0,
+        "subtotal": 95.0
+      },
+      {
+        "key": "9789000000050",
+        "name": "English-Chinese Pocket Reference",
+        "qty": 1,
+        "unit_price": 68.0,
+        "subtotal": 68.0
+      }
+    ],
+    "subtotal": 163.0,
+    "discount_amount": 12.22,
+    "final_total": 150.78,
+    "receipt_text": "================================================================\n                    JOY BOOKSTORE - RECEIPT                     \n================================================================\nReceipt ID: RCP000002\nDate: 2026-04-03 11:15:30\n================================================================\nCustomer: Sarah Lee\nCustomer ID: CUS0002\nLoyalty Tier: 🥉 Bronze\nLoyalty Points: 515\nITEM                                     |  QTY   |     SUBTOTAL\n----------------------------------------------------------------\nAfter the Late Bell (9789000000043)      |   1    |    HKD 95.00\nEnglish-Chinese Pocket Reference         |   1    |    HKD 68.00\n(9789000000050)                          |        |             \n================================================================\nSubtotal:                                             HKD 163.00\nLoyalty Discount (7.5%):                              -HKD 12.22\nPoints Earned:                                                15\n================================================================\nTOTAL:                                                HKD 150.78\n================================================================\n            Thank you for shopping at Joy BookStore!            \n================================================================",
+    "customer_snapshot": {
+      "customer_id": "CUS0002",
+      "name": "Sarah Lee",
+      "loyalty_points": 515,
+      "loyalty_tier": "🥉 Bronze"
+    },
+    "receipt_store_name": "Joy BookStore"
+  },
+  {
+    "receipt_id": "RCP000003",
+    "created": "2026-04-04T13:42:50",
+    "customer": {
+      "customer_id": "CUS0001",
+      "name": "Alex Tan",
+      "email": "alex.tan@customer.com",
+      "telephone": "9123 4567"
+    },
+    "items": [
+      {
+        "key": "4890123456800",
+        "name": "A4 Graph Paper",
+        "qty": 2,
+        "unit_price": 22.0,
+        "subtotal": 44.0
+      },
+      {
+        "key": "9789000000036",
+        "name": "First Mailer Campaign Workbook",
+        "qty": 1,
+        "unit_price": 158.0,
+        "subtotal": 158.0
+      }
+    ],
+    "subtotal": 202.0,
+    "discount_amount": 0.0,
+    "final_total": 202.0,
+    "receipt_store_name": "Joy BookStore",
+    "customer_snapshot": {
+      "customer_id": "CUS0001",
+      "name": "Alex Tan",
+      "loyalty_points": 519,
+      "loyalty_tier": "🥉 Bronze"
+    },
+    "receipt_text": "================================================================\n                    JOY BOOKSTORE - RECEIPT                     \n================================================================\nReceipt ID: RCP000003\nDate: 2026-04-04 13:42:50\n================================================================\nCustomer: Alex Tan\nCustomer ID: CUS0001\nLoyalty Tier: 🥉 Bronze\nLoyalty Points: 519\nITEM                                     |  QTY   |     SUBTOTAL\n----------------------------------------------------------------\nA4 Graph Paper (4890123456800)           |   2    |    HKD 44.00\nFirst Mailer Campaign Workbook           |   1    |   HKD 158.00\n(9789000000036)                          |        |             \n================================================================\nSubtotal:                                             HKD 202.00\nPoints Earned:                                                20\n================================================================\nTOTAL:                                                HKD 202.00\n================================================================\n            Thank you for shopping at Joy BookStore!            \n================================================================"
+  }
+]

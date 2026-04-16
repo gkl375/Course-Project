@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Roland Ma",
+    "staff_id": "STF0001",
+    "role": "Manager",
+    "phone": "5123 4567",
+    "email": "roland.ma@bookstore.com",
+    "active": true
+  },
+  {
+    "name": "Alice Chan",
+    "staff_id": "STF0002",
+    "role": "Cashier",
+    "phone": "9482 7315",
+    "email": "alice.chan@bookstore.com",
+    "active": true
+  },
+  {
+    "name": "Cynthia Lee",
+    "staff_id": "STF0003",
+    "role": "Clerk",
+    "phone": "5139 2067",
+    "email": "cynthia.lee@bookstore.com",
+    "active": true
+  },
+  {
+    "name": "David Lau",
+    "staff_id": "STF0004",
+    "role": "Stock Controller",
+    "phone": "6012 3456",
+    "email": "david.lau@bookstore.com",
+    "active": true
+  },
+  {
+    "name": "Emma Wong",
+    "staff_id": "STF0005",
+    "role": "Part-time Assistant",
+    "phone": "6123 9876",
+    "email": "emma.wong@bookstore.com",
+    "active": true
+  }
+]

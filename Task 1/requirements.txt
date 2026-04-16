@@ -1,0 +1,18 @@
+# Bookstore Management System - Hong Kong POS
+#
+# Before pip install:
+#   - Python 3.10+ recommended.
+#   - Tkinter: included with the Windows installer from python.org.
+#     If Tkinter is missing, install the appropriate Tkinter package for your environment.
+#   - Webcam barcode: pyzbar uses ZBar; Windows wheels usually bundle it.
+#     If import fails, see https://github.com/NaturalHistoryMuseum/pyzbar#installation
+#
+# NumPy: Python 3.13+ needs a NumPy version with prebuilt wheels (typically 2.x).
+# OpenCV: use a recent 4.x wheel that matches NumPy 2 (4.10+).
+# Pillow: 10.0.1 has no Python 3.13 wheels; use 10.4+ (or 11+) on new machines.
+#
+requests==2.31.0
+opencv-python>=4.10.0.84,<5
+numpy>=1.24.0
+pyzbar==0.1.9
+pillow>=10.4.0,<13
